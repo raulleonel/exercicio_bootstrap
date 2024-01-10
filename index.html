@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alugue sua prancha</title>
+    <link rel="stylesheet" href="./lib/bootstrap.min.css">
+    
+    <style>
+
+        .navbar-nav .nav-link.active {
+            color: white;
+        }
+
+        .nav-link {
+            text-align: center;
+            margin: 8px;
+        }
+
+        section {
+            height: 100%;
+            background-color: #fff;
+            padding-top: 97px;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            left: 0;
+            background-color: #fff;
+        }
+
+        #toledo {
+            margin-bottom: 23px;
+        }
+        
+        .logo-surf {
+            height: 80px;
+        }
+
+        .carousel-item img {
+            max-height: 690px;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            right: 15%;
+            bottom: 1.25rem;
+            left: 15%;
+            padding-top: 1.25rem;
+            padding-bottom: 1.25rem;
+            color: #fff;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 12px;
+            font-weight: 500;
+        }
+
+        .carousel-item {
+            background-color: rgba(0, 0, 0, 0.3)
+        }
+
+        #destaques img {
+            height: 230px;
+        }
+
+        #sobre img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        article {
+            margin: 16px;
+            text-align: center;
+        }
+
+        @media (min-width: 992px) {
+            #teste {
+                display: flex;
+            }
+        }
+
+        section h2 {
+            font-size: 40px;
+            font-weight: bolder;
+        }
+
+        #sobre p {
+            font-size: 24px;
+            margin-top: 24px;
+        }
+
+        .container footer {
+            width: 98%;
+            margin: auto;
+            margin-top: 24px;
+            margin-bottom: 12px;
+            border-radius: 12px;
+            padding: 12px;
+            align-items: center;
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.6);
+            box-shadow: rgba(0, 0, 0, 0.6) 2.4px 2.4px 3.2px;
+        } 
+        
+        
+
+        footer p {
+            font-weight: 600;
+            margin: 0px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header id="cabecalho" class="fixed-top">
+            <div class="navbar navbar-expand-lg">
+                <div class="container">
+                    <img class="logo-surf" src="./imagens/vector-stylish-black-and-white-icon-surf-board-vector-ai-eps.jpeg" alt="">
+                    <h1>Board Riders Surf Club</h1>
+                    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <nav id="menu" class="collapse navbar-collapse justify-content-end">
+                        <ul class="nav navbar-nav nav-pills">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#produtos">Produtos</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#destaques">Destaques</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#sobre">Sobre a loja</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#mais-vendidas">Mais vendidas</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#novidades">Novidades</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="btn-group">
+                        <button class="btn btn-primary" type="button">
+                            Cadastrar
+                        </button>
+                        <button data-bs-toggle="dropdown" class="btn btn-primary dropdown-toggle dropdown-toggle-split"></button>
+                        <ul class="dropdown-menu dropdown">
+                            <li class="dropdown-item">
+                                <a href="#">Novo usuario</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="#">Novo fornecedor</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="#">Novo funcionario</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="carousel-exemplo" class="carousel carousel-fade slide" data-bs-ride="carousel" >
+            <div class="carousel-inner">
+                <div data-bs-interval="3000" class="carousel-item active">
+                    <img class="d-block w-100" src="https://hardcore.com.br/wp-content/uploads/sites/21/2022/12/Screen-Shot-2022-12-13-at-9.35.04-AM.png" alt="">
+                    <div class="carousel-caption">
+                        <h2>Pyzel - Shadown</h2>
+                    </div>
+                </div>
+                <div data-bs-interval="3000" class="carousel-item">
+                    <img class="d-block w-100" src="https://assets.boardshop.co.uk/media/catalog/category/Sharp-Eye.jpg" alt="">
+                    <div class="carousel-caption">
+                        <h2>Sharpeye - Inferno 72</h2>
+                    </div>
+                </div>
+                <div data-bs-interval="3000" class="carousel-item">
+                    <img class="d-block w-100" src="https://img.redbull.com/images/c_fill,g_auto,w_830,h_467/q_auto:low,f_auto/redbullcom/2013/01/09/1331580358282_1/gabriel-medina-pukas-mega" alt="">
+                    <div class="carousel-caption">
+                        <h2>Pukas - The Freak Kid</h2>
+                    </div>
+                </div>
+            </div>
+            <button data-bs-target="#carousel-exemplo" data-bs-slide="prev" class="carousel-control-prev" type="button">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button data-bs-target="#carousel-exemplo" data-bs-slide="next" class="carousel-control-next" type="button">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+            <div class="carousel-indicators">
+                <button data-bs-target="#carousel-exemplo" class="active" data-bs-slide-to="0" type="button"></button>
+                <button data-bs-target="#carousel-exemplo" data-bs-slide-to="1" type="button"></button>
+                <button data-bs-target="#carousel-exemplo" data-bs-slide-to="2" type="button"></button>
+            </div>
+        </div>
+        <div data-bs-spy="scroll" data-bs-target="cabecalho">
+            <section id="produtos">
+                <h2>Produtos</h2>
+                <div class="container">
+                    <nav class="nav nav-tabs">
+                        <button data-bs-toggle="tab" data-bs-target="#aba4" class="nav-link active" type="button">Pyzel</button>
+                        <button data-bs-toggle="tab" data-bs-target="#aba5" class="nav-link" type="button">SharpEye</button>
+                        <button data-bs-toggle="tab" data-bs-target="#aba6" class="nav-link" type="button">Lost</button>
+                    </nav>
+                    <div class="tab-content">
+                        <div id="aba4" class="tab-pane active">
+                            <div class="container">
+                                <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
+                                    <div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <img src="https://pranchanova.com/wp-content/uploads/2020/05/Pyzalien-2-min.jpg" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">PyzAlien 2</h4>
+                                                <h5 class="card-sub">Prancha Nova</h5>
+                                                <p class="card-text">Uma opção incrível para o quiver de uma prancha - A Pyzalien 2 é uma nova versão de uma antiga favorita!A Pyzalien original tem sido...</p>
+                                                <a href="#" class="btn btn-primary">Reserve Já</a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <img src="https://i0.wp.com/pranchanova.com/wp-content/uploads/2023/03/White-Tiger.png?w=720&ssl=1" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">White Tiger</h4>
+                                                <h5 class="card-sub">Prancha Nova</h5>
+                                                <p class="card-text">A White Tiger é o mais novo modelo que acrescentamos à nossa linha Funformance. Trata-se de uma prancha stubby pequena, divertida...</p>
+                                                <a href="#" class="btn btn-primary">Reserve Já</a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <img src="https://i0.wp.com/pranchanova.com/wp-content/uploads/2020/08/Gremlin.jpg?w=720&ssl=1" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">Gremlin</h4>
+                                                <h5 class="card-sub">Prancha Nova</h5>
+                                                <p class="card-text">A Gremlin é mais uma criação que faz parte da Família Ghost da Pyzel. Ela é uma prancha mais curta e mais robusta, ideal para surfistas...</p>
+                                                <a href="#" class="btn btn-primary">Reserve Já</a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="aba5" class="tab-pane">
+                            <div class="container">
+                                <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
+                                    <div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <img src="https://i0.wp.com/pranchanova.com/wp-content/uploads/2021/03/77mais.jpg?w=720&ssl=1" id="toledo"/>
+                                            <div class="card-body">
+                                                <h4 class="card-title">#77+</h4>
+                                                <h5 class="card-sub">Prancha Nova</h5>
+                                                <p class="card-text">A #77+. Uma prancha desenhada e construída para o surf sério, em ondas fortes. Você quer ficar realmente preparado para encarar a próxima...</p>
+                                                <a href="#" class="btn btn-primary">Reserve Já</a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <img src="https://i0.wp.com/pranchanova.com/wp-content/uploads/2019/09/ht2.5.jpg?w=720&ssl=1" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">HT 2.5</h4>
+                                                <h5 class="card-sub">Prancha Nova</h5>
+                                                <p class="card-text">A mais nova HT2.5 (Holy Toledo 2.5) ainda tem seu design para alta performance em ondas do dia-a-dia, só que soltando ainda mais faísca e agressividade!</p>
+                                                <a href="#" class="btn btn-primary">Reserve Já</a>
+                                            </div>
+                                        </article>
+                                    </div><div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <img src="https://i0.wp.com/pranchanova.com/wp-content/uploads/2019/09/storm-Sharpeye.jpg?w=720&ssl=1" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">Surf Storms</h4>
+                                                <h5 class="card-sub">Prancha Nova</h5>
+                                                <p class="card-text">Esse é o novo modelo do Kanoa Igarashi para ondas pequenas e médias. Kanoa ajudou o Japão a ganhar a medalha de ouro no Isa games, com essa prancha.</p>
+                                                <a href="#" class="btn btn-primary">Reserve Já</a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="aba6" class="tab-pane">
+                            <div class="container">
+                                <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
+                                    <div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <img src="https://i0.wp.com/pranchanova.com/wp-content/uploads/2023/10/Copia-de-1-3.png?w=720&ssl=1" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">3.0 STUB DRIVER</h4>
+                                                <h5 class="card-sub">Prancha Nova</h5>
+                                                <p class="card-text">Uma prancha de alto desempenho projetada para dias com ondas menores e beach breaks, a usada pelos atletas da equipe …</p>
+                                                <a href="#" class="btn btn-primary">Reserve Já</a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <img src="https://i0.wp.com/pranchanova.com/wp-content/uploads/2021/06/RNF-96.jpg?w=720&ssl=1" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">RNF 96</h4>
+                                                <h5 class="card-sub">Prancha Nova</h5>
+                                                <p class="card-text">A Lost RNF 96 é uma prancha fish inspirada nos designs que Matt Biolos, vulgo Mayhem, produzia em meados da década de 90.</p>
+                                                <a href="#" class="btn btn-primary">Reserve Já</a>
+                                            </div>
+                                        </article>
+                                    </div><div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <img src="https://i0.wp.com/pranchanova.com/wp-content/uploads/2023/06/1-4-3.png?w=720&ssl=1" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">DRIVER 3.0 </h4>
+                                                <h5 class="card-sub">Prancha Nova</h5>
+                                                <p class="card-text">A DRIVER 3.0 é a evolução da 2.0, a Pro-formance mais vendida e popular da Lost. Projetada por meio de feedbacks diretos..</p>
+                                                <a href="#" class="btn btn-primary">Reserve Já</a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="destaques">
+                <h2>Destaques</h2>
+                <div class="container">
+                    <nav class="nav nav-tabs">
+                        <button data-bs-toggle="tab" data-bs-target="#aba1" class="nav-link active" type="button">Surf Masculino</button>
+                        <button data-bs-toggle="tab" data-bs-target="#aba2" class="nav-link" type="button">Surf Feminino</button>
+                        <button data-bs-toggle="tab" data-bs-target="#aba3" class="nav-link" type="button">Noticias Do Surf</button>
+                    </nav>
+                    <div class="tab-content">
+                        <div id="aba1" class="tab-pane active">
+                            <div class="container">
+                                <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
+                                    <div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <header class="card-header">
+                                                Cabecalho do card
+                                            </header>
+                                            <img src="https://ik.imgkit.net/3vlqs5axxjf/TAW/uploadedImages/All_Gateways/Adventure_Travel/Features/teahupoosurftahiti.jpg?tr=w-1200%2Cfo-auto" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">Titulo do card</h4>
+                                                <h5 class="card-sub">Subtitulo</h5>
+                                                <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, quam accusantium, sequi officiis sit consectetur voluptatibus dignissimos odio optio, sed ex velit ipsam ab alias? Quasi delectus beatae quos minus.</p>
+                                                <a href="#" class="btn btn-primary">Leia mais</a>
+                                            </div>
+                                            <footer class="card-footer">
+                                                Postado em <time>02/01/2024 as 16:48</time>
+                                            </footer>
+                                        </article>
+                                    </div>
+                                    <div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <div class="card-header">
+                                                Cabecalho do card
+                                            </div>
+                                            <img src="https://live.staticflickr.com/3727/10948714324_1178bc9c75_b.jpg" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">Titulo do card</h4>
+                                                <h5 class="card-sub">Subtitulo</h5>
+                                                <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, quam accusantium, sequi officiis sit consectetur voluptatibus dignissimos odio optio, sed ex velit ipsam ab alias? Quasi delectus beatae quos minus.</p>
+                                                <a href="#" class="btn btn-primary">Leia mais</a>
+                                            </div>
+                                            <footer class="card-footer">
+                                                Postado em <time>02/01/2024 as 16:48</time>
+                                            </footer>
+                                        </article>
+                                    </div>
+                                    <div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <header class="card-header">
+                                                Cabecalho do card
+                                            </header>
+                                            <img src="https://live.staticflickr.com/2817/10885975883_43451bda7f_b.jpg" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">Titulo do card</h4>
+                                                <h5 class="card-sub">Subtitulo</h5>
+                                                <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, quam accusantium, sequi officiis sit consectetur voluptatibus dignissimos odio optio, sed ex velit ipsam ab alias? Quasi delectus beatae quos minus.</p>
+                                                <a href="#" class="btn btn-primary">Leia mais</a>
+                                            </div>
+                                            <footer class="card-footer">
+                                                Postado em <time>02/01/2024 as 16:48</time>
+                                            </footer>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="aba2" class="tab-pane">
+                            <div class="container">
+                                <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
+                                    <div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <header class="card-header">
+                                                Cabecalho do card
+                                            </header>
+                                            <img src="https://www.waves.com.br/wp-content/uploads/2020/07/Tatiana-Weston-Webb-c-WSL-_-Dunbar.jpg" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">Titulo do card</h4>
+                                                <h5 class="card-sub">Subtitulo</h5>
+                                                <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, quam accusantium, sequi officiis sit consectetur voluptatibus dignissimos odio optio, sed ex velit ipsam ab alias? Quasi delectus beatae quos minus.</p>
+                                                <a href="#" class="btn btn-primary">Leia mais</a>
+                                            </div>
+                                            <footer class="card-footer">
+                                                Postado em <time>02/01/2024 as 16:48</time>
+                                            </footer>
+                                        </article>
+                                    </div>
+                                    <div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <div class="card-header">
+                                                Cabecalho do card
+                                            </div>
+                                            <img src="https://s2.glbimg.com/sZJtsSKb0b2hdkYF3SGb4h9r4CQ=/645x388/i.glbimg.com/og/ig/infoglobo1/f/original/2017/09/15/silvana_fotonova.jpg" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">Titulo do card</h4>
+                                                <h5 class="card-sub">Subtitulo</h5>
+                                                <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, quam accusantium, sequi officiis sit consectetur voluptatibus dignissimos odio optio, sed ex velit ipsam ab alias? Quasi delectus beatae quos minus.</p>
+                                                <a href="#" class="btn btn-primary">Leia mais</a>
+                                            </div>
+                                            <footer class="card-footer">
+                                                Postado em <time>02/01/2024 as 16:48</time>
+                                            </footer>
+                                        </article>
+                                    </div><div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <header class="card-header">
+                                                Cabecalho do card
+                                            </header>
+                                            <img src="https://www.waves.com.br/wp-content/uploads/2022/02/Moana-Jones-Wong_Pipe22__TYH4093_Heff.jpg" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">Titulo do card</h4>
+                                                <h5 class="card-sub">Subtitulo</h5>
+                                                <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, quam accusantium, sequi officiis sit consectetur voluptatibus dignissimos odio optio, sed ex velit ipsam ab alias? Quasi delectus beatae quos minus.</p>
+                                                <a href="#" class="btn btn-primary">Leia mais</a>
+                                            </div>
+                                            <footer class="card-footer">
+                                                Postado em <time>02/01/2024 as 16:48</time>
+                                            </footer>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="aba3" class="tab-pane">
+                            <div class="container">
+                                <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
+                                    <div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <header class="card-header">
+                                                Cabecalho do card
+                                            </header>
+                                            <img src="https://i1.wp.com/www.hawaiisurfpoint.com.br/wp-content/uploads/2017/02/quiver-sc-1.png?fit=1200%2C630&ssl=1" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">Titulo do card</h4>
+                                                <h5 class="card-sub">Subtitulo</h5>
+                                                <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, quam accusantium, sequi officiis sit consectetur voluptatibus dignissimos odio optio, sed ex velit ipsam ab alias? Quasi delectus beatae quos minus.</p>
+                                                <a href="#" class="btn btn-primary">Leia mais</a>
+                                            </div>
+                                            <footer class="card-footer">
+                                                Postado em <time>02/01/2024 as 16:48</time>
+                                            </footer>
+                                        </article>
+                                    </div>
+                                    <div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <div class="card-header">
+                                                Cabecalho do card
+                                            </div>
+                                            <img src="https://www.esportelandia.com.br/wp-content/uploads/2019/10/Tipos-de-pranchas-de-surf.jpg" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">Titulo do card</h4>
+                                                <h5 class="card-sub">Subtitulo</h5>
+                                                <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, quam accusantium, sequi officiis sit consectetur voluptatibus dignissimos odio optio, sed ex velit ipsam ab alias? Quasi delectus beatae quos minus.</p>
+                                                <a href="#" class="btn btn-primary">Leia mais</a>
+                                            </div>
+                                            <footer class="card-footer">
+                                                Postado em <time>02/01/2024 as 16:48</time>
+                                            </footer>
+                                        </article>
+                                    </div><div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <header class="card-header">
+                                                Cabecalho do card
+                                            </header>
+                                            <img src="https://www.esportelandia.com.br/wp-content/uploads/2023/07/IMG_7544-1024x683.jpeg" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">Titulo do card</h4>
+                                                <h5 class="card-sub">Subtitulo</h5>
+                                                <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, quam accusantium, sequi officiis sit consectetur voluptatibus dignissimos odio optio, sed ex velit ipsam ab alias? Quasi delectus beatae quos minus.</p>
+                                                <a href="#" class="btn btn-primary">Leia mais</a>
+                                            </div>
+                                            <footer class="card-footer">
+                                                Postado em <time>02/01/2024 as 16:48</time>
+                                            </footer>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="sobre">
+                <div id="teste" class="container">
+                    <div>
+                        <h2>Sobre a loja</h2>
+                        <p>
+                            Somos o primeiro Clube de Pranchas do Brasil.
+                        </p>
+                        <p>
+                            Oferecemos liberdade para que o surfista tenha novas experiências no mar, surfando com diferentes modelos, tamanhos, marcas e tecnologias de pranchas de surfe.
+                        </p>
+                        <p>
+                            Aperte o play e entenda a evolução do mercado de pranchas de surfe.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="https://www.waves.com.br/wp-content/uploads/2018/03/quiver-italo-australia-2018_Capa.jpg" alt="">
+                    </div>
+                </div>
+            </section>
+            <section id="mais-vendidas">
+                <h2>Mais vendidas</h2>
+                <div class="container">
+                    <nav class="nav nav-tabs">
+                        <button data-bs-toggle="tab" data-bs-target="#aba7" class="nav-link" type="button">Pyzel</button>
+                        <button data-bs-toggle="tab" data-bs-target="#aba8" class="nav-link active" type="button">SharpEye</button>
+                        <button data-bs-toggle="tab" data-bs-target="#aba9" class="nav-link" type="button">Lost</button>
+                    </nav>
+                    <div class="tab-content">
+                        <div id="aba7" class="tab-pane">
+                            <div class="container">
+                                <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
+                                    <div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <img src="https://pranchanova.com/wp-content/uploads/2020/05/Pyzalien-2-min.jpg" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">PyzAlien 2</h4>
+                                                <h5 class="card-sub">Prancha Nova</h5>
+                                                <p class="card-text">Uma opção incrível para o quiver de uma prancha - A Pyzalien 2 é uma nova versão de uma antiga favorita!A Pyzalien original tem sido...</p>
+                                                <a href="#" class="btn btn-primary">Reserve Já</a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <img src="https://i0.wp.com/pranchanova.com/wp-content/uploads/2023/03/White-Tiger.png?w=720&ssl=1" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">White Tiger</h4>
+                                                <h5 class="card-sub">Prancha Nova</h5>
+                                                <p class="card-text">A White Tiger é o mais novo modelo que acrescentamos à nossa linha Funformance. Trata-se de uma prancha stubby pequena, divertida...</p>
+                                                <a href="#" class="btn btn-primary">Reserve Já</a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <img src="https://i0.wp.com/pranchanova.com/wp-content/uploads/2020/08/Gremlin.jpg?w=720&ssl=1" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">Gremlin</h4>
+                                                <h5 class="card-sub">Prancha Nova</h5>
+                                                <p class="card-text">A Gremlin é mais uma criação que faz parte da Família Ghost da Pyzel. Ela é uma prancha mais curta e mais robusta, ideal para surfistas...</p>
+                                                <a href="#" class="btn btn-primary">Reserve Já</a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="aba8" class="tab-pane active">
+                            <div class="container">
+                                <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
+                                    <div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <img src="https://i0.wp.com/pranchanova.com/wp-content/uploads/2021/03/77mais.jpg?w=720&ssl=1" id="toledo"/>
+                                            <div class="card-body">
+                                                <h4 class="card-title">#77+</h4>
+                                                <h5 class="card-sub">Prancha Nova</h5>
+                                                <p class="card-text">A #77+. Uma prancha desenhada e construída para o surf sério, em ondas fortes. Você quer ficar realmente preparado para encarar a próxima...</p>
+                                                <a href="#" class="btn btn-primary">Reserve Já</a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <img src="https://i0.wp.com/pranchanova.com/wp-content/uploads/2019/09/ht2.5.jpg?w=720&ssl=1" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">HT 2.5</h4>
+                                                <h5 class="card-sub">Prancha Nova</h5>
+                                                <p class="card-text">A mais nova HT2.5 (Holy Toledo 2.5) ainda tem seu design para alta performance em ondas do dia-a-dia, só que soltando ainda mais faísca e agressividade!</p>
+                                                <a href="#" class="btn btn-primary">Reserve Já</a>
+                                            </div>
+                                        </article>
+                                    </div><div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <img src="https://i0.wp.com/pranchanova.com/wp-content/uploads/2019/09/storm-Sharpeye.jpg?w=720&ssl=1" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">Surf Storms</h4>
+                                                <h5 class="card-sub">Prancha Nova</h5>
+                                                <p class="card-text">Esse é o novo modelo do Kanoa Igarashi para ondas pequenas e médias. Kanoa ajudou o Japão a ganhar a medalha de ouro no Isa games, com essa prancha.</p>
+                                                <a href="#" class="btn btn-primary">Reserve Já</a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="aba9" class="tab-pane">
+                            <div class="container">
+                                <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
+                                    <div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <img src="https://i0.wp.com/pranchanova.com/wp-content/uploads/2023/10/Copia-de-1-3.png?w=720&ssl=1" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">3.0 STUB DRIVER</h4>
+                                                <h5 class="card-sub">Prancha Nova</h5>
+                                                <p class="card-text">Uma prancha de alto desempenho projetada para dias com ondas menores e beach breaks, a usada pelos atletas da equipe …</p>
+                                                <a href="#" class="btn btn-primary">Reserve Já</a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <img src="https://i0.wp.com/pranchanova.com/wp-content/uploads/2021/06/RNF-96.jpg?w=720&ssl=1" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">RNF 96</h4>
+                                                <h5 class="card-sub">Prancha Nova</h5>
+                                                <p class="card-text">A Lost RNF 96 é uma prancha fish inspirada nos designs que Matt Biolos, vulgo Mayhem, produzia em meados da década de 90.</p>
+                                                <a href="#" class="btn btn-primary">Reserve Já</a>
+                                            </div>
+                                        </article>
+                                    </div><div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <img src="https://i0.wp.com/pranchanova.com/wp-content/uploads/2023/06/1-4-3.png?w=720&ssl=1" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">DRIVER 3.0 </h4>
+                                                <h5 class="card-sub">Prancha Nova</h5>
+                                                <p class="card-text">A DRIVER 3.0 é a evolução da 2.0, a Pro-formance mais vendida e popular da Lost. Projetada por meio de feedbacks diretos..</p>
+                                                <a href="#" class="btn btn-primary">Reserve Já</a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="novidades">
+                <h2>Novidades</h2>
+                <div class="container">
+                    <nav class="nav nav-tabs">
+                        <button data-bs-toggle="tab" data-bs-target="#aba10" class="nav-link" type="button">Pyzel</button>
+                        <button data-bs-toggle="tab" data-bs-target="#aba11" class="nav-link" type="button">SharpEye</button>
+                        <button data-bs-toggle="tab" data-bs-target="#aba12" class="nav-link active" type="button">Lost</button>
+                    </nav>
+                    <div class="tab-content">
+                        <div id="aba10" class="tab-pane">
+                            <div class="container">
+                                <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
+                                    <div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <img src="https://pranchanova.com/wp-content/uploads/2020/05/Pyzalien-2-min.jpg" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">PyzAlien 2</h4>
+                                                <h5 class="card-sub">Prancha Nova</h5>
+                                                <p class="card-text">Uma opção incrível para o quiver de uma prancha - A Pyzalien 2 é uma nova versão de uma antiga favorita!A Pyzalien original tem sido...</p>
+                                                <a href="#" class="btn btn-primary">Reserve Já</a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <img src="https://i0.wp.com/pranchanova.com/wp-content/uploads/2023/03/White-Tiger.png?w=720&ssl=1" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">White Tiger</h4>
+                                                <h5 class="card-sub">Prancha Nova</h5>
+                                                <p class="card-text">A White Tiger é o mais novo modelo que acrescentamos à nossa linha Funformance. Trata-se de uma prancha stubby pequena, divertida...</p>
+                                                <a href="#" class="btn btn-primary">Reserve Já</a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <img src="https://i0.wp.com/pranchanova.com/wp-content/uploads/2020/08/Gremlin.jpg?w=720&ssl=1" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">Gremlin</h4>
+                                                <h5 class="card-sub">Prancha Nova</h5>
+                                                <p class="card-text">A Gremlin é mais uma criação que faz parte da Família Ghost da Pyzel. Ela é uma prancha mais curta e mais robusta, ideal para surfistas...</p>
+                                                <a href="#" class="btn btn-primary">Reserve Já</a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="aba11" class="tab-pane">
+                            <div class="container">
+                                <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
+                                    <div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <img src="https://i0.wp.com/pranchanova.com/wp-content/uploads/2021/03/77mais.jpg?w=720&ssl=1" id="toledo"/>
+                                            <div class="card-body">
+                                                <h4 class="card-title">#77+</h4>
+                                                <h5 class="card-sub">Prancha Nova</h5>
+                                                <p class="card-text">A #77+. Uma prancha desenhada e construída para o surf sério, em ondas fortes. Você quer ficar realmente preparado para encarar a próxima...</p>
+                                                <a href="#" class="btn btn-primary">Reserve Já</a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <img src="https://i0.wp.com/pranchanova.com/wp-content/uploads/2019/09/ht2.5.jpg?w=720&ssl=1" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">HT 2.5</h4>
+                                                <h5 class="card-sub">Prancha Nova</h5>
+                                                <p class="card-text">A mais nova HT2.5 (Holy Toledo 2.5) ainda tem seu design para alta performance em ondas do dia-a-dia, só que soltando ainda mais faísca e agressividade!</p>
+                                                <a href="#" class="btn btn-primary">Reserve Já</a>
+                                            </div>
+                                        </article>
+                                    </div><div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <img src="https://i0.wp.com/pranchanova.com/wp-content/uploads/2019/09/storm-Sharpeye.jpg?w=720&ssl=1" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">Surf Storms</h4>
+                                                <h5 class="card-sub">Prancha Nova</h5>
+                                                <p class="card-text">Esse é o novo modelo do Kanoa Igarashi para ondas pequenas e médias. Kanoa ajudou o Japão a ganhar a medalha de ouro no Isa games, com essa prancha.</p>
+                                                <a href="#" class="btn btn-primary">Reserve Já</a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="aba12" class="tab-pane active">
+                            <div class="container">
+                                <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
+                                    <div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <img src="https://i0.wp.com/pranchanova.com/wp-content/uploads/2023/10/Copia-de-1-3.png?w=720&ssl=1" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">3.0 STUB DRIVER</h4>
+                                                <h5 class="card-sub">Prancha Nova</h5>
+                                                <p class="card-text">Uma prancha de alto desempenho projetada para dias com ondas menores e beach breaks, a usada pelos atletas da equipe …</p>
+                                                <a href="#" class="btn btn-primary">Reserve Já</a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <img src="https://i0.wp.com/pranchanova.com/wp-content/uploads/2021/06/RNF-96.jpg?w=720&ssl=1" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">RNF 96</h4>
+                                                <h5 class="card-sub">Prancha Nova</h5>
+                                                <p class="card-text">A Lost RNF 96 é uma prancha fish inspirada nos designs que Matt Biolos, vulgo Mayhem, produzia em meados da década de 90.</p>
+                                                <a href="#" class="btn btn-primary">Reserve Já</a>
+                                            </div>
+                                        </article>
+                                    </div><div class="col-4">
+                                        <article class="card text-bg-dark">
+                                            <img src="https://i0.wp.com/pranchanova.com/wp-content/uploads/2023/06/1-4-3.png?w=720&ssl=1" />
+                                            <div class="card-body">
+                                                <h4 class="card-title">DRIVER 3.0 </h4>
+                                                <h5 class="card-sub">Prancha Nova</h5>
+                                                <p class="card-text">A DRIVER 3.0 é a evolução da 2.0, a Pro-formance mais vendida e popular da Lost. Projetada por meio de feedbacks diretos..</p>
+                                                <a href="#" class="btn btn-primary">Reserve Já</a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="container">
+            <footer>
+                <p>
+                    Desenvolvido por <a href="https://github.com/raulleonel">RCLF</a>  | © 2023
+                </p>
+            </footer>
+        </div>
+    </div>
+
+
+    <script src="./lib/bootstrap.bundle.min.js"></script>
+    </script>
+
+</body>
+</html>
